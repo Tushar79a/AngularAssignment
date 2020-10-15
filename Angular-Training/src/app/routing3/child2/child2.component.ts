@@ -12,6 +12,7 @@ export class Child2Component implements OnInit,OnDestroy {
   isDisabled : boolean = false;
   intTime : number  = 0;
   timeDetail : Array<TimeInfo>;
+  isHide : boolean = true;
 
   @Output() public timeDetailEvent = new EventEmitter<TimeInfo[]>();
   @Output() public timerEvent = new EventEmitter<number>();
@@ -46,6 +47,11 @@ export class Child2Component implements OnInit,OnDestroy {
   }
 
   action(data:number){
+    if(data < 0)
+    {
+      this.isHide = false;
+      return;
+    }
     if(!this.isDisabled)
     {
       this.timer = data;
@@ -82,5 +88,14 @@ export class Child2Component implements OnInit,OnDestroy {
     this.timeDetailEvent.emit(this.timeDetail);
 
     this.timerEvent.emit(this.timer);
+  }
+
+  changeTimer(data:number)
+  {
+    if(data>=0)
+    {
+      this.isHide = true;;
+
+    }
   }
 }

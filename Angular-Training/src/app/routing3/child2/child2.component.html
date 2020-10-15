@@ -1,11 +1,19 @@
 <div style="overflow-y: auto; height: 220px;">
     <div>
-        <input style= "width: 40%;" class="form-control" [disabled]="isDisabled" #setTime [(ngModel)]="intTime" type="number"><br>
-        <button class="btn btn-outline-secondary" style="margin-right: 5px;" (click) = "action(setTime.value)">Start/Pause</button>
-        <button class="btn btn-outline-secondary" (click) = "reset()" >Reset</button>
+      <div>
+        <form class="form-inline">
+          <div style= "width: 70%;">
+        <input class="form-control mb-2 mr-sm-2" (change)="changeTimer(setTime.value)"  [disabled]="isDisabled" #setTime name="setTime" type="number" [(ngModel)]="intTime" >
+        <span class=" text-danger mx-2" [hidden]="isHide">Number cannot be less than 0</span>
+         </div>
+         <div>
+          <button class="btn btn-outline-secondary" style="margin-right: 5px;" (click) = "action(setTime.value)">Start/Pause</button>
+          <button class="btn btn-outline-secondary" (click) = "reset()" >Reset</button>
+        </div>
+      </form>
     </div>
     <div class="my-2" >
-        <span *ngFor="let time of timeDetail"> 
+        <span *ngFor="let time of timeDetail">
             <p *ngIf = "time.status=='Paused'" >{{time.status}} at {{time.curtime}}</p>
         </span>
     </div>
