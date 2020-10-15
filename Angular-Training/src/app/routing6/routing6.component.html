@@ -1,0 +1,15 @@
+<div >
+<div
+class="search-results my-1.5 mx-3"
+infinite-scroll
+[infiniteScrollDistance]="scrollDistance"
+[infiniteScrollThrottle]="throttle"
+(scrolled)="onScroll()"
+>
+
+<p *ngFor="let i of numbers">
+  <button mat-raised-button (click)="openDialog(i)">{{ i }}</button>
+</p>
+</div>
+</div>
+

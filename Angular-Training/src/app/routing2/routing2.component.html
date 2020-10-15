@@ -1,0 +1,16 @@
+<div  style="margin-left: 75%;"  class="my-3 ">
+  <button type="button" class="btn"  (click)="toggle()"  >
+    <i class="fa fa-bars"></i> {{buttonName}} </button>
+  <select #sortBy class="btn drop btn-default dropdown-toggle mx-2" id="sort-by" (change)="onChange(sortBy.value)">
+    <option [value]="ASCENDING"> Low to High Price</option>
+    <option [value]="DESCENDING"> High to Low Price</option>
+</select>
+</div>
+<div class="container-fluid">
+<mat-grid-list [cols]="buttonName=='Grid'? 4:2 " rowHeight='80px'   >
+    <mat-grid-tile *ngFor="let cart of carts">
+      <span><p>{{cart.name}}</p><p>{{cart.price}}</p></span><br>
+      <span></span>
+    </mat-grid-tile>
+</mat-grid-list>
+</div>

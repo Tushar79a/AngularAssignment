@@ -1,0 +1,24 @@
+<div class="container-fluid my-3 " style="min-height: 220px;">
+
+<div class="row " >
+      <div class="" style="margin-left: 55%; position: absolute;">
+        <app-child2 (timeDetailEvent) ="timerDetailP=$event" (timerEvent) ="timerP=$event"></app-child2>
+    </div>
+    <div class="" style="margin-left: 50px; position: absolute;" >
+        <app-child1 [timers]='timerP'></app-child1>
+    </div>
+
+</div>
+
+</div>
+
+<div class="container-fluid  ">
+<div class="row">
+    <div class="col" style="margin-left: 60px;">
+        <app-child3 [timeDetail]='timerDetailP' ></app-child3>
+    </div>
+    <div class="col" style="margin-left: 60px;">
+        <app-child4 [timeDetail]='timerDetailP' ></app-child4>
+    </div>
+</div>
+</div>

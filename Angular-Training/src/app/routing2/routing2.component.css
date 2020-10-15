@@ -1,0 +1,23 @@
+  
+mat-grid-tile {
+    background: lightblue;
+  }
+  .btn {
+    background-color: yellowgreen;
+    border: none;
+    color: white;
+    padding: 12px 16px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .btn.drop {
+    background-color: whitesmoke;
+    border: none;
+    color: black;
+    padding: 12px 16px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  
+

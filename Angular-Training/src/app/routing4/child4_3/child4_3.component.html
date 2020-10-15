@@ -1,0 +1,6 @@
+
+<div style="overflow-y: auto; height: 220px;">
+    <span *ngFor="let time of timeDetail"> 
+        <p >{{time.status}} at {{time.date | date:'dd-mm-yyyy, h:mm:ss a '}} </p>
+    </span>
+</div>

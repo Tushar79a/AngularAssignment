@@ -1,0 +1,13 @@
+<div style="overflow-y: auto; height: 220px;">
+    <div>
+        <input style= "width: 40%;" class="form-control" [disabled]="isDisabled" #setTime [(ngModel)]="intTime" type="number"><br>
+        <button class="btn btn-outline-secondary" style="margin-right: 5px;" (click) = "action(setTime.value)">Start/Pause</button>
+        <button class="btn btn-outline-secondary" (click) = "reset()" >Reset</button>
+    </div>
+    <div class="my-2" >
+        <span *ngFor="let time of timeDetail"> 
+            <p *ngIf = "time.status=='Paused'" >{{time.status}} at {{time.curtime}}</p>
+        </span>
+    </div>
+</div>
+
